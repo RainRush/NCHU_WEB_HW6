@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+
+$("#month").change(function() {
+	
+});
