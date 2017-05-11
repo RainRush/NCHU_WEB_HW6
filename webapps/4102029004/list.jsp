@@ -87,7 +87,7 @@
 <%			
 		}
 	}
-	database.closeDB();
+	
 %>
 	</table>
 	<a href="./index.jsp" class="btn btn-warning" role="button">Back to Login</a>
