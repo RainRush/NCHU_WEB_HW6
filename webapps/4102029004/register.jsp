@@ -38,13 +38,7 @@
 								out.println(failMessage);
 							} else {
 								String password = request.getParameter("Password");
-								String month = request.getParameter("Month");
-								String day = request.getParameter("Day");
-								if (Integer.parseInt(month) < 10)
-									month = "0" + month;
-								if (Integer.parseInt(day) < 10)
-									day = "0" + day;
-								String birthday = month + "-" + day;
+								String birthday = request.getParameter("Birthday");
 								String memo = request.getParameter("Memo");
 								if (name != null && password != null && birthday != null) {
 									database.connectDB();
@@ -62,25 +56,7 @@
 				</div>
 				<div class="form-group">
 					<b>Birthday：</b>
-					<select name="Month" id="month">
-					<%
-						for(int month=1; month<=12; month++){
-					%>
-							<option><%=month%></option>
-					<%
-						}
-					%>
-					</select>
-					<b>/</b>
-					<select name="Day" id="day">
-					<%
-						for(int day=1; day<=31; day++){
-					%>
-							<option><%=day%></option>
-					<%
-						}
-					%>
-					</select>
+					<input type="date" name="Birthday" required><br>
 				</div>
 				<div class="form-group">
 					<label for="Memo">Memo:</label>

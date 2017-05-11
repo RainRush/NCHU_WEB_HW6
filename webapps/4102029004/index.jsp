@@ -53,6 +53,7 @@
 					<div class="inForm" style="text-align:center">
 						<input type="submit" class="btn btn-primary" value="Log In" name="submit">
 						<a href="./register.jsp" class="btn btn-success" role="button">Register</a>
+						<a href="./list.jsp" class="btn btn-warning" role="button">User List</a>
 					</div>
 				</form>
 				</div>
