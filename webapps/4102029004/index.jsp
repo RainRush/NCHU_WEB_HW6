@@ -43,8 +43,10 @@
 							if(rs != null) {
 								while(rs.next()){
 									String dbPassword = rs.getString("password");
-									if(dbPassword.equals(inputPassword))
+									if(dbPassword.equals(inputPassword)) {
+										session.setAttribute("loginName", name);
 										response.sendRedirect("./success.jsp");
+									}
 								}
 							}
 							out.println(failMessage);

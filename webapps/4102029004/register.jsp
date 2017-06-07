@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="background">
@@ -25,7 +26,8 @@
 			<div class="row">
 			<form action="./register.jsp" method="post">
 				<div class="form-group">
-					<b>Name：</b><input name="Name" type="text" required>
+					<b>Name：</b><input name="Name" type="text" id="name" required>
+					<div id="checkNameMessage" style="display: inline"></div>
 					<%
 					if(request.getParameter("submit") != null) {
 						String failMessage = "<p style='color:red'>Name used!! Please use another one!</p>";
@@ -49,7 +51,6 @@
 						}
 					}
 					%>
-					<br>
 				</div>
 				<div class="form-group">
 					<b>Password：</b><input name="Password" type="password" required><br>
@@ -70,6 +71,7 @@
 		</div>
 	</div>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/index.js"></script>
 </body>
 </html>

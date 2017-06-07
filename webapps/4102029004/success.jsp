@@ -11,12 +11,24 @@
 </head>
 <body>
 	<div class="background">
-
+		<%
+			if(session.getAttribute("loginName") == null){
+				response.sendRedirect("./index.jsp");	
+			}
+			String name = (String)session.getAttribute("loginName");
+			
+			if(request.getParameter("logout") != null) {
+				session.removeAttribute("loginName");
+				response.sendRedirect("./index.jsp");
+			}
+		%>
 		<div class="content">
 			<div id="title">
-				Logged In!
+				Guten Tag, <%= name %>
 			</div>
-			<input type="submit" class="btn btn-warning" value="Last Page" onclick="history.back(-1)" />
+			<form>
+				<input type="submit" class="btn btn-warning" value="LogOut" name="logout"/>
+			</form>
 		</div>
 	</div>
 </body>
